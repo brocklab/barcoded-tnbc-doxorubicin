@@ -1,0 +1,7 @@
+[scrna]
+length = 21
+input = "data/sams"
+threads = 20
+pipeline = "data/pycashier/pipeline"
+output = "data/pycashier/outs"
+cutadapt_args = "--max-n=0 -n 2 --trimmed-only --overlap 5"

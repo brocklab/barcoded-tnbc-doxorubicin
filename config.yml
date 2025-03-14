@@ -1,0 +1,28 @@
+localcore: 24
+localmem: 200
+colors:
+  clone-cluster:
+    "1": "#9a46ab"
+    "2": "#127030"
+    unknown: "grey"
+  survivorship:
+    high: "#4668ab"
+    low: "#823535"
+    unknown: "grey"
+  group:
+    "PT": "#4269d0"
+    "30HR": "#efb118"
+    "250": "#ff725c"
+    "400": "#6cc5b0"
+    "550": "#4a0066"
+  sample:
+    "Pretreatment": "#4269d0"
+    "Dox-550-30HR": "#efb118"
+
+    "Dox-250-1": "#ffb4a9"
+    "Dox-250-4": "#ff725c"  # middle
+    "Dox-250-6": "#ff3010"
+
+    "Dox-400-2": "#a3dbcd"
+    "Dox-400-4": "#6cc5b0"  # middle
+    "Dox-400-5": "#41a48c"

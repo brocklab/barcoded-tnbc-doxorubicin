@@ -1,0 +1,96 @@
+{
+  "figure-1": [
+    "scrna/downstream/outs/umaps/umap-group.png",
+    "scrna/downstream/outs/umaps/umap-per-sample.png",
+    "targeted/outs/barcodes-post-treatment-per-sample-per-group-swarmplot.svg",
+    "targeted/outs/post-treatment-barcode-dotplot.svg"
+  ],
+  "figure-2": [
+    "scrna/downstream/outs/umaps/umap-top-ten-survivor-clones.png",
+    "targeted/outs/frequency-clone-cluster-sorted-bar-dot.svg",
+    "scrna/downstream/outs/deg-clone-cluster/heatmap-pretreament-clone-cluster-1-vs-2.svg",
+    "scrna/downstream/outs/umaps/umap-esam.png",
+    "targeted/outs/clone-cluster-abundance-passage-area.svg",
+    "scrna/downstream/outs/umaps/umap-clone-cluster.png",
+    "targeted/outs/clone-cluster-unique-barcodes-dots.svg"
+  ],
+  "figure-3": [
+    "scrna/downstream/outs/deg-survivorship/deg-top-genes-violin-Dox-550-30HR-1.svg",
+    "scrna/downstream/outs/deg-survivorship/deg-top-genes-violin-Pretreatment-2.svg",
+    "scrna/downstream/outs/deg-survivorship/deg-top-genes-violin-Dox-550-30HR-2.svg",
+    "scrna/downstream/outs/deg-survivorship/deg-top-genes-violin-Pretreatment-1.svg"
+  ],
+  "figure-4": [
+    "scrna/downstream/outs/pt-30hr/pt-vs-30hr-clone-clusters-gsea.svg",
+    "scrna/downstream/outs/pt-30hr/pt-vs-30hr-clone-cluster-deg-correlation.svg",
+    "scrna/downstream/outs/umaps/umap-sample-pt-dox-30hr-only.png",
+    "scrna/downstream/outs/pt-30hr/heatmap-pt-vs-30hr-clone-clusters-deg-up250-down250.svg"
+  ],
+  "figure-5": [
+    "scrna/downstream/outs/umaps/umap-bg010-by-sample.png",
+    "scrna/downstream/outs/divergent/gsea-top5-significant-bg032.svg",
+    "scrna/downstream/outs/divergent/overlapping-genes-bg010-pre-vs-post-treatment.svg",
+    "scrna/downstream/outs/divergent/gsea-top5-significant-bg016.svg",
+    "scrna/downstream/outs/umaps/umap-bg032-by-sample.png",
+    "scrna/downstream/outs/umaps/umap-bg016-by-sample.png",
+    "scrna/downstream/outs/divergent/gsea-top5-significant-bg010.svg",
+    "scrna/downstream/outs/divergent/overlapping-genes-bg016-pre-vs-post-treatment.svg",
+    "scrna/downstream/outs/divergent/overlapping-genes-bg032-pre-vs-post-treatment.svg"
+  ],
+  "figure-6": [
+    "scrna/downstream/outs/new-populations/umap-Dox-400-2-bg053-Pretreatment-cluster.png",
+    "scrna/downstream/outs/umaps/umap-SIRLNT.png",
+    "scrna/downstream/outs/new-populations/umap-Dox-400-4-bg149-Pretreatment-cluster.png",
+    "scrna/downstream/outs/umaps/umap-PCSK6.png",
+    "scrna/downstream/outs/new-populations/bar-newly-upregulated-totals.svg",
+    "scrna/downstream/outs/new-populations/dotplot_new-upregulated-genes-post-treatment-clones.svg"
+  ],
+  "supp-figure-1": [
+    "targeted/outs/clone-cluster-per-treated-samples.svg",
+    "targeted/outs/barcode-dotplot.svg",
+    "targeted/outs/shared-bar-post.svg",
+    "targeted/outs/percent-unknown.svg",
+    "targeted/outs/top-14-barcode-dot-plot-facet.svg"
+  ],
+  "supp-figure-2": [
+    "targeted/outs/boxplot-growth-rate-clone-cluster.svg",
+    "targeted/outs/growth-rates-vs-treated-abundance.svg",
+    "targeted/outs/barcode-dotplot-outgrowth.svg",
+    "targeted/outs/outgrowth-persistence-vs-initial-abundance.svg"
+  ],
+  "supp-figure-3": [
+    "scrna/downstream/outs/misc/post-barcode-totals-by-sample-dotplot.svg",
+    "scrna/barcodes/outs/barcodes-in-library-by-cell-and-umi-total.svg",
+    "scrna/barcodes/outs/collapsed-barcode-heatmap.svg"
+  ],
+  "supp-figure-4": [
+    "scrna/downstream/outs/umaps/umap-leiden.png",
+    "scrna/downstream/outs/barcodes/dendrogram-barcode-cluster.svg",
+    "scrna/downstream/outs/misc/correlation_matrix_sample-clone-cluster.svg"
+  ],
+  "supp-figure-5": [
+    "drug-dosing/outs/dose-response-curve-231-1KB3-EN2.svg",
+    "drug-dosing/outs/dose-response-curve-MDA-MB-231.svg",
+    "drug-dosing/outs/dose-response-curve-231-1KB3-EP2.svg",
+    "drug-dosing/outs/dose-response-curve-231-1KB3.svg"
+  ],
+  "supp-figure-6": [
+    "scrna/downstream/outs/deg-survivorship/pt-survivorship-Dox-550-30HR-cluster-1-deg-randomized-volcano.png",
+    "scrna/downstream/outs/deg-survivorship/pt-survivorship-Pretreatment-cluster-2-deg-volcano.png",
+    "scrna/downstream/outs/deg-survivorship/pt-survivorship-Dox-550-30HR-cluster-2-deg-volcano.png",
+    "scrna/downstream/outs/deg-survivorship/pt-survivorship-Pretreatment-cluster-2-deg-randomized-volcano.png",
+    "scrna/downstream/outs/deg-survivorship/pt-survivorship-Pretreatment-cluster-1-deg-volcano.png",
+    "scrna/downstream/outs/deg-survivorship/pt-survivorship-Pretreatment-cluster-1-deg-randomized-volcano.png",
+    "scrna/downstream/outs/deg-survivorship/pt-survivorship-Dox-550-30HR-cluster-1-deg-volcano.png",
+    "scrna/downstream/outs/deg-survivorship/pt-survivorship-Dox-550-30HR-cluster-2-deg-randomized-volcano.png"
+  ],
+  "supp-figure-7": [
+    "scrna/downstream/outs/pt-30hr/pt-vs-30hr-clone-cluster-2-deg-volcano.png",
+    "scrna/downstream/outs/pt-30hr/pt-vs-30hr-clone-cluster-1-deg-volcano.png"
+  ],
+  "supp-figure-8": [
+    "scrna/downstream/outs/umaps/umap_bg032-samples.png",
+    "scrna/downstream/outs/umaps/umap_bg016-samples.png",
+    "scrna/downstream/outs/umaps/umap_bg010-samples.png"
+  ]
+}
