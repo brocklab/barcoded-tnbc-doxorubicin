@@ -198,3 +198,4 @@ outs*/
 *.bak
 
 !/targeted/data/DM2103-bfp.tsv
+!/data/raw-files.txt
