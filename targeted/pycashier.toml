@@ -1,0 +1,12 @@
+[global]
+pipeline = "data/pipeline"
+threads = 25
+
+[merge]
+input = "data/raw-paired-end"
+output = "data/raw"
+
+[extract]
+input = "data/raw"
+output = "data/outs"
+

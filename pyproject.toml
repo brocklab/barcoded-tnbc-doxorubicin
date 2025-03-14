@@ -1,0 +1,67 @@
+[project]
+name = "barcoded-mda-mb-231-analysis"
+
+[tool.ruff.lint]
+select = ["E","F","I"]
+
+[tool.pixi.project]
+channels = ["conda-forge", "bioconda", "r"]
+platforms = ["linux-64"]
+
+[tool.pixi.environments]
+default = ["dev", "scrna", "barcodes"]
+
+[tool.pixi.tasks]
+# https://github.com/prefix-dev/pixi/issues/1573
+post-install = "PREFIX=$CONDA_PREFIX .bioconductor-genomeinfodbdata-post-link.sh"
+
+[tool.pixi.dependencies]
+python = ">=3.12.7"
+scipy = ">=1.15.2,<2"
+pandas = ">=2.2.3,<3"
+polars = ">=1.22.0,<2"
+pyarrow = ">=19.0.1,<20"
+numpy = ">=2.1.3,<3"
+scikit-learn = ">=1.6.1,<2"
+"ruamel.yaml" = ">=0.18.10,<0.19"
+altair = ">=5.5.0,<6"
+vl-convert-python = ">=1.7.0,<2"
+vegafusion = ">=2.0.1,<3"
+vegafusion-python-embed = ">=1.6.9,<2"
+matplotlib = ">=3.10.0,<4"
+jupyter = ">=1.1.1,<2"
+snakemake = ">=8.28.0,<9"
+
+[tool.pixi.feature.dev.dependencies]
+ruff = "*"
+snakefmt = "*"
+
+[tool.pixi.pypi-dependencies]
+helpers = { path = "./packages/helpers", editable = true}
+
+[tool.pixi.feature.barcodes.dependencies]
+pycashier = ">=2024.1005"
+fastp = ">=0.23.4"
+cutadapt = ">=4.8"
+starcode = ">=1.4"
+pysam = ">=0.22"
+samtools = "*"
+
+[tool.pixi.feature.scrna.dependencies]
+scanpy = ">=1.9.8"
+ipywidgets = ">=8.1.2"
+pyyaml = ">=6.0.1"
+leidenalg = ">=0.10.2"
+anndata2ri = ">=1.3.1"
+gseapy = ">=0.12.0"
+
+rpy2 = ">=3.5.11,<3.6"
+r-base = ">=4"
+
+bioconductor-scdblfinder = ">=1.16.0"
+bioconductor-singlecellexperiment = ">=1.24.0"
+bioconductor-biocparallel = ">=1.36.0"
+bioconductor-genomeinfodb = ">=1.38.1,<1.39"
+
+bioconductor-mast = "*"
+r-lme4 = "*" # for mast

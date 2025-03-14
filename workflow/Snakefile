@@ -1,0 +1,142 @@
+import helpers as hp
+import json
+
+dataset = hp.data.get_sc_dataset("231-1KB3")
+
+
+def load_figures_json():
+    with (hp.ROOT_PATH / "workflow" / "figures.json").open("r") as f:
+        data = json.load(f)
+    return {n: [hp.ROOT_PATH / p for p in paths] for n, paths in data.items()}
+
+
+figures = load_figures_json()
+
+
+module drug_dosing:
+    snakefile:
+        "drug-dosing.smk"
+
+
+module scrna_fastq2h5ad:
+    snakefile:
+        "fastq2h5ad.smk"
+    config:
+        config
+
+
+module scrna_downstream:
+    snakefile:
+        "scrna-downstream.smk"
+
+
+module scrna_deg:
+    snakefile:
+        "scrna-deg.smk"
+
+
+module scrna_barcodes:
+    snakefile:
+        "scrna-barcodes.smk"
+    config:
+        config
+
+
+module targeted:
+    snakefile:
+        "targeted.smk"
+
+
+targ_pro = hp.Project("targeted")
+# targeted_seq_plots = [
+#     targ_pro.paths.outs / f
+#     for f in [
+#         "barcodes-post-treatment-per-sample-per-group-swarmplot.svg",
+#         "post-treatment-barcode-dotplot.svg",
+#         # "top-surviving-barcodes-dotplot.svg",
+#         # "top-surviving-barcodes-by-dose.svg",
+#         "percent-unknown.svg",
+#     ]
+# ]
+
+extra_targeted_plots = [
+    targ_pro.paths.outs / f
+    for f in (
+        "bfp-positive-sample.svg",
+        "unique-barcodes-outgrowth.svg",
+        "top-ten-P31-barcodes-abundance-change.svg",
+        "unique-barcodes-outgrowth.svg",
+        "outgrowth-barcodes-in-library.svg",
+    )
+]
+
+
+def combine(*args: List[Path]) -> List[Path]:
+    l = []
+    for arg in args:
+        l.extend(arg)
+    return l
+
+
+use rule * from scrna_fastq2h5ad as scrna_fastq2h5ad_*
+
+
+use rule * from scrna_downstream as scrna_downstream_*
+
+
+use rule * from scrna_deg as scrna_deg_*
+
+
+use rule * from scrna_barcodes as scrna_barcodes_*
+
+
+use rule * from targeted as targeted_*
+
+
+use rule * from drug_dosing as drug_*
+
+
+data = [
+    dataset.clustered,
+    dataset.final,
+    dataset.barcoded,
+    hp.ROOT_PATH / "scrna/barcodes/data/collapsed-barcodes.csv",
+]
+plots = [
+    *extra_targeted_plots,
+    *scrna_downstream.plots,
+    *targeted.plots,
+]
+
+all_panels = [p for _, paths in figures.items() for p in paths]
+
+
+rule all:
+    default_target: True
+    input:
+        *data,
+        *all_panels,
+        *plots,
+
+
+rule figures:
+    input:
+        *all_panels,
+
+
+for fig, paths in figures.items():
+
+    rule:
+        name:
+            fig
+        input:
+            *paths,
+
+
+rule h5ads:
+    input:
+        dataset.raw,
+        dataset.normalized,
+        dataset.clustered,
+        dataset.barcoded,
+        dataset.final,
